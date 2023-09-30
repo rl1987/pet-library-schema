@@ -1,3 +1,24 @@
-type Query {
-  gnar: String!
+type Pet {
+  id: ID!
+  name: String!
+  weight: Float
+  photo: Photo!
 }
+
+type Customer {
+  id: ID!
+  name: String!
+  pets: [Pet!]
+}
+
+type Photo {
+  full: String
+  thumb: String
+}
+
+type Query { 
+  totalPets: Int! 
+  allPets: [Pet!]! 
+  allCustomers: [Customer!]!
+}
+
